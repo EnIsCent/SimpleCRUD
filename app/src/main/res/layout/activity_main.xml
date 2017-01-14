@@ -10,8 +10,75 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.endrey.simplecrudmobileapplicationwithsqlite.MainActivity">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/eventName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:hint="Name of Event" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/eventOfficer"
+        android:layout_below="@+id/eventName"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:hint="Officer-in-Charge" />
+
+    <Button
+        android:text="Add Event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventOfficer"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="13dp"
+        android:id="@+id/addEvent"
+        android:layout_alignParentEnd="true"
+        android:onClick="btn_click" />
+
+    <Button
+        android:text="Delete Event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/deleteEvent"
+        android:layout_below="@+id/addEvent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="btn_click"/>
+
+    <Button
+        android:text="Update Event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateEvent"
+        android:layout_below="@+id/deleteEvent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="btn_click" />
+
+    <Button
+        android:text="Event List"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/eventList"
+        android:layout_below="@+id/updateEvent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="btn_click"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_below="@+id/eventList"
+        android:layout_alignParentStart="true"
+        android:id="@+id/eventListView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>
