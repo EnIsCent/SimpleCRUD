@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Simple CRUD mobile application with SQLite</string>
+    <string name="portrait_mode_text_view">Portrait View</string>
+    <string name="landscape_mode_text_view">Landscape View</string>
 </resources>

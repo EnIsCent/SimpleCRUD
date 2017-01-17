@@ -1,6 +1,10 @@
 package com.example.endrey.simplecrudmobileapplicationwithsqlite;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.DialogInterface;
+import android.content.pm.ConfigurationInfo;
+import android.content.res.Configuration;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AlertDialog;
@@ -22,7 +26,29 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+       // setContentView(R.layout.activity_main);
+
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        Configuration configInfo = getResources().getConfiguration();
+
+        if(configInfo.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+
+            FragmentLandscape fragmentLandscape = new FragmentLandscape();
+
+            fragmentTransaction.replace(android.R.id.content, fragmentLandscape);
+
+        } else {
+
+            FragmentPortrait fragmentPortrait= new FragmentPortrait();
+
+            fragmentTransaction.replace(android.R.id.content, fragmentPortrait);
+
+
+        }
+
+        fragmentTransaction.commit();
 
         eventName = (EditText)findViewById(R.id.eventName);
         eventOfficer= (EditText) findViewById(R.id.eventOfficer);
